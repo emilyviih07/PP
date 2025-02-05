@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar Dinheiro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F1E1F4;
+            color: #333;
+        }
+
+        header {
+            background-color: #9A7FBF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #9A7FBF;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #9A7FBF;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #7F65A1;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #9A7FBF;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Guardar Dinheiro</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Calculadora de Economia</h1>
+            <form id="form-calculadora">
+                <label for="valor-total">Valor Total (R$):</label>
+                <input type="number" id="valor-total" name="valor-total" required>
+
+                <label for="percentual">Porcentagem a Guardar (%):</label>
+                <input type="number" id="percentual" name="percentual" required>
+
+                <button type="submit">Calcular</button>
+            </form>
+
+            <div class="resultado" id="resultado"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Meu Site de Finanças. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('form-calculadora').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const valorTotal = parseFloat(document.getElementById('valor-total').value);
+            const percentual = parseFloat(document.getElementById('percentual').value);
+
+            const valorGuardar = (valorTotal * percentual) / 100;
+            
+            document.getElementById('resultado').textContent = `Você deve guardar: R$${valorGuardar.toFixed(2)}`;
+        });
+    </script>
+
+</body>
+</html>
