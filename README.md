@@ -1,0 +1,1 @@
+Professor, vá em database e troque a senha do banco de dados
