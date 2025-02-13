@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria de Investimentos</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Container principal */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            text-align: center;
+            background-color: #7d4b8c; /* Cor roxa */
+            color: white;
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        /* Seção de introdução */
+        .intro {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .intro h2 {
+            color: #7d4b8c;
+            font-size: 28px;
+        }
+
+        .intro p {
+            color: #555;
+        }
+
+        /* Estilo da seção de benefícios */
+        .benefits {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .benefit {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .benefit:hover {
+            transform: scale(1.05);
+        }
+
+        .benefit h3 {
+            color: #7d4b8c;
+            font-size: 24px;
+        }
+
+        .benefit p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #7d4b8c; /* Cor roxa */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #5a3372; /* Cor roxa mais escura */
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 10px;
+            background-color: #7d4b8c;
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsividade para telas pequenas */
+        @media (max-width: 768px) {
+            .benefits {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .benefit {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Consultoria de Investimentos</h1>
+        </header>
+
+        <!-- Seção de introdução -->
+        <section class="intro">
+            <h2>Receba Aconselhamento Sobre as Melhores Opções de Investimentos</h2>
+            <p>A nossa consultoria de investimentos oferece a você o apoio necessário para tomar decisões informadas e seguras. Seja você um investidor iniciante ou experiente, nossos especialistas estão aqui para guiá-lo nas melhores opções para o seu perfil.</p>
+        </section>
+
+        <!-- Seção de benefícios -->
+        <section class="benefits">
+            <div class="benefit">
+                <h3>Investimentos Personalizados</h3>
+                <p>Entendemos o seu perfil financeiro e recomendamos investimentos que se adequem aos seus objetivos e ao seu apetite de risco.</p>
+            </div>
+
+            <div class="benefit">
+                <h3>Assessoria Completa</h3>
+                <p>Receba acompanhamento contínuo e atualizado sobre o desempenho dos seus investimentos, com relatórios periódicos e ajustes sempre que necessário.</p>
+            </div>
+
+            <div class="benefit">
+                <h3>Investimentos Seguros</h3>
+                <p>Trabalhamos com as opções de investimento mais seguras e rentáveis no mercado, garantindo que você tome decisões acertadas.</p>
+            </div>
+
+            <div class="benefit">
+                <h3>Suporte ao Longo de Todo o Processo</h3>
+                <p>Desde o início, oferecemos todo o suporte necessário para que você se sinta confortável e seguro ao tomar suas decisões financeiras.</p>
+            </div>
+        </section>
+
+        <!-- Botão Saiba Mais -->
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="contato.html" class="btn">Saiba Mais</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Empresa XYZ - Todos os direitos reservados</p>
+        </footer>
+    </div>
+</body>
+</html>

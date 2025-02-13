@@ -19,9 +19,22 @@ app.get("/login",(_,res) => {
     res.render("login");
 })
 
+app.get("/",(_,res) => {
+    res.render("web");
+})
+
+app.get("/planejamento",(req,res) => {
+    res.render("planejamento");
+})
+
 app.get("/cadastro",(_,res) => {
     res.render("cadastro");
 })
+
+app.get("/guarda",(req,res) => {
+    res.render("guarda");
+})
+
 
 app.post("/autenticar",(req,res) => {
     const email = req.body.email;
@@ -29,7 +42,7 @@ app.post("/autenticar",(req,res) => {
 
     database.select().where({email: email,senha: senha}).table("usuarios").then(user => {
         if(user[0] != undefined){
-            res.send("O usuário entrou na conta com sucesso");
+            res.redirect("/");
         }else{
             res.send("E-mail ou senha errado");
         }
@@ -50,7 +63,7 @@ app.post("/criarLogin",(req,res) => {
 
         if(user == undefined){
             database.insert(dados).into("usuarios").then(() => {
-                res.send("Seu email foi registrado com sucesso");
+                res.redirect("/login");
             })
         }else{
             res.send("E-mail já foi usado");

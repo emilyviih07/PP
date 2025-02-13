@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investimentos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F1E1F4;
+            color: #333;
+        }
+
+        header {
+            background-color: #9A7FBF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #9A7FBF;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #9A7FBF;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #7F65A1;
+        }
+
+        .lista-investimentos {
+            margin-top: 20px;
+        }
+
+        .lista-investimentos ul {
+            list-style-type: none;
+        }
+
+        .lista-investimentos li {
+            background-color: #F7F7F7;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #9A7FBF;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Investimentos</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Registrar Investimento</h1>
+            <form id="form-investimento">
+                <label for="nome-investimento">Nome do Investimento:</label>
+                <input type="text" id="nome-investimento" name="nome-investimento" required>
+
+                <label for="valor-investido">Valor Investido (R$):</label>
+                <input type="number" id="valor-investido" name="valor-investido" required>
+
+                <label for="data-investimento">Data do Investimento:</label>
+                <input type="date" id="data-investimento" name="data-investimento" required>
+
+                <button type="submit">Adicionar Investimento</button>
+            </form>
+
+            <div class="lista-investimentos">
+                <h2>Investimentos Registrados</h2>
+                <ul id="lista-investimentos"></ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Meu Site de Finanças. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('form-investimento').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome-investimento').value;
+            const valor = document.getElementById('valor-investido').value;
+            const data = document.getElementById('data-investimento').value;
+
+            const novoInvestimento = { nome, valor, data };
+
+            const ul = document.getElementById('lista-investimentos');
+            const li = document.createElement('li');
+            li.textContent = `Investimento: ${nome} | Valor: R$${parseFloat(valor).toFixed(2)} | Data: ${data}`;
+            ul.appendChild(li);
+
+            document.getElementById('form-investimento').reset();
+        });
+    </script>
+
+</body>
+</html>
